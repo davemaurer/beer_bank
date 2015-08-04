@@ -29,3 +29,7 @@ group :test do
   gem 'shoulda-matchers'
 end
 
+group :deployment do
+  gem 'rails_12factor'
+end
+
