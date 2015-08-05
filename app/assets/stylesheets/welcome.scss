@@ -10,7 +10,7 @@
 }
 
 .hero {
-  background: url("beerbankwelcome-4.jpg") no-repeat center center;
+  background: asset-data-url("beerbankwelcome-4.jpg") no-repeat center center;
   background-size: cover;
   height: 85vh;
   overflow: hidden;
