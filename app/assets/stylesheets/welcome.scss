@@ -1,13 +1,41 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-body {
-  background: black;
-}
-h2 {
-  color: white;
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
 }
 
-p {
-  color: white;
+.hero {
+  background: url("beerbankwelcome-4.jpg") no-repeat center center;
+  background-size: cover;
+  height: 85vh;
+  overflow: hidden;
+  h1 {
+    color: #fff;
+    text-align: center;
+    @include vertical-align;
+  }
+}
+
+.footer {
+  background-color: #292c2f;
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem;
+  p {
+    &.slogan {
+      color: #8d9093;
+      font-size: 1.8rem;
+      margin: 0 0 1rem;
+    }
+    &.copywrite {
+      color: #8f9296;
+      font-size: 0.875rem;
+      margin: 0;
+    }
+  }
 }

@@ -1,37 +1,16 @@
-<body>
-<div class="row">
-  <div class="large-12 columns">
-    <h2>BeerBank, remember what you like!</h2>
-  </div>
-</div>
-
-<div class="row">
-  <div class="large-12 columns">
-    <div id="slider">
-      <a href="#">
-        <%= image_tag "beerbank_banner-1.jpg" %>
-      </a>
-    </div>
-    <hr/>
-  </div>
-</div>
-
-<div class="row">
-  <div class="large-3 large-centered columns">
-    <ul class="button-group even-3">
-      <%= link_to "Login with Twitter", login_path, class: "button success button" %>
-    </ul>
-  </div>
-</div>
-
-<footer class="row">
-  <div class="large-12 columns">
-    <hr/>
-    <div class="row">
-      <div class="large-6 columns">
-        <p>© Copyright Creative License, LLC 2015</p>
-      </div>
+<header class="hero">
+  <h1>BeerBank. Remember what you like.
+  <br>
+  </br>
+  <div class="row">
+    <div class="small-12 columns">
+      <%= link_to "Login with Twitter", login_path, class: "button button round" %>
     </div>
   </div>
+  </h1>
+</header>
+<footer class="footer">
+  <p class="copywrite">Copywrite Creative License, LLC © 2015</p>
+  <br>
 </footer>
-</body>
+
