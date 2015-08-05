@@ -2,7 +2,7 @@ class SessionsController < ApplicationController
   def create
     if user = User.from_omniauth(request.env["omniauth.auth"])
       session[:user_id] = user.id
-      redirect_to user_index_path
+      redirect_to lists_path
     else
       redirect_to root_path
     end
