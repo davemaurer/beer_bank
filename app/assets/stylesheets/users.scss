@@ -1,3 +1,17 @@
-// Place all the styles related to the Users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.has-form {
+  position: absolute;
+  top: 0;
+  left: 6rem; // adjust distance from left here
+  min-width: 14rem; // adjust width here
+
+  @media only screen and (max-width: 40em) {
+    min-width: 10rem;
+    top: 0.5rem;
+
+    .button {
+      height: 1.85rem;
+    }
+  }
+}
+
