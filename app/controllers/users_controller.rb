@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  def index
-    @beers = Beer.find_by(current_user)
+  def show
   end
 end

@@ -28,13 +28,3 @@
     </ul>
   </section>
 </nav>
-
-<div class="beerlist">
-  <ul>
-    <% @beers.each do |beer| %>
-      <li><%= "#{link_to beer.name, beer_path(:id)} #{beer.rating}" %></li>
-    <% end %>
-    <li>
-    </li>
-  </ul>
-</div>
