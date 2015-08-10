@@ -4,7 +4,15 @@
       <li class="divider"></li>
       <li><%= link_to "Back to BeerBank", beers_path, class: "button" %></li>
       <li class="divider"></li>
-      <li><%= link_to "Add to List", new_beer_path, class: "button" %></li>
+      <li>
+      <%= form_for(:beer, url: beers_path) do |f| %>
+      <%= f.hidden_field :name, value: @beer['name'] %>
+      <%= f.hidden_field :abv, value: @beer['abv'] %>
+      <%= f.hidden_field :ibu, value: @beer['ibu'] %>
+      <%= f.hidden_field :description, value: @beer['description'] %>
+      <%= f.submit "Add to List", class: "button" %>
+      <% end %>
+      </li>
       <li class="divider"></li>
     </ul>
   </section>
