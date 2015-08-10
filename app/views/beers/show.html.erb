@@ -1,0 +1,25 @@
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="buttons">
+      <li class="divider"></li>
+      <li><%= link_to "Back to BeerBank", beers_path, class: "button" %></li>
+      <li class="divider"></li>
+      <li><%= link_to "Add to List", new_beer_path, class: "button" %></li>
+      <li class="divider"></li>
+    </ul>
+  </section>
+</nav>
+
+<div class="large-12 columns">
+  <br>
+  <h3><%= "#{@beer["name"]} - ABV: #{@beer["abv"]}% - IBU: #{@beer["ibu"]}" %></h3>
+</div>
+<br>
+<br>
+<br>
+<div>
+  <div class="large-9 large-centered columns">
+    <h3><%= "#{@beer["brewery"]}" %></h3>
+    <h3><%= "#{@beer["description"]}" %></h3>
+  </div>
+</div>

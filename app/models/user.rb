@@ -21,12 +21,4 @@ class User < ActiveRecord::Base
       config.access_token_secret = oauth_token_secret
     end
   end
-
-  def brewery_client
-    @brew_client ||= Brew::REST::Client.new do |config|
-      config.consumer_key =        ENV['brewery_key']
-      config.access_token =        oauth_token
-      config.access_token_secret = oauth_token_secret
-    end
-  end
 end

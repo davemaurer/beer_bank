@@ -9,7 +9,7 @@
           <input type="text" placeholder="Find a Beer">
         </div>
         <div class="large-4 small-3 columns">
-          <a href="#" class="alert button expand">Search</a>
+          <a href="/beers/show" class="alert button expand">Search</a>
         </div>
       </div>
     </li>
@@ -28,3 +28,8 @@
     </ul>
   </section>
 </nav>
+
+<div class="large-12 columns">
+  <h4>Hi <%= current_user.name %>. You have <%= Beer.count %> beers in your list.</h4>
+</div>
+
