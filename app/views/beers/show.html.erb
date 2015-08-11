@@ -10,7 +10,7 @@
       <%= f.hidden_field :abv, value: @beer['abv'] %>
       <%= f.hidden_field :ibu, value: @beer['ibu'] %>
       <%= f.hidden_field :description, value: @beer['description'] %>
-      <%= f.submit "Add to List", class: "button" %>
+      <%= f.submit "Add to List" %>
       <% end %>
       </li>
       <li class="divider"></li>
@@ -27,7 +27,6 @@
 <br>
 <div>
   <div class="large-9 large-centered columns">
-    <h3><%= "#{@beer["brewery"]}" %></h3>
     <h3><%= "#{@beer["description"]}" %></h3>
   </div>
 </div>

@@ -1,4 +1,11 @@
 // larger screen styles
+.beers_background {
+  background: asset-data-url("beerBackground-5.jpg") no-repeat center center;
+  background-size: cover;
+  height: 85vh;
+  overflow: hidden;
+}
+
 .has-form {
   position: absolute;
   top: 0;
@@ -9,9 +16,7 @@
     min-width: 10rem;
     top: 0.5rem;
 
-    .button {
-      height: 1.85rem;
-    }
+
   }
 }
 
@@ -30,4 +35,29 @@
 
 .top-bar.expanded {
   background: #333333;
+}
+
+$gradient: linear-gradient(45deg, white, yellow);
+$gradient2: linear-gradient(45deg, orange, red);
+
+.button {
+  color: transparent;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  border: 4px solid transparent;
+  border-image: $gradient;
+  border-image-slice: 1;
+  background: $gradient;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  transition: all 0.2s ease;
+
+  &:hover {
+    border-image: $gradient2;
+    background: $gradient2;
+  }
+}
+
+.smallbox {
+  max-width: 60px;
 }

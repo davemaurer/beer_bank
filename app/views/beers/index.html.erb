@@ -30,13 +30,16 @@
     </ul>
   </section>
 </nav>
-
-<div class="large-12 columns">
-  <h4>Hi <%= current_user.name %>. You have <%= Beer.all.count %> beers in your list.</h4>
-  <!--<ul>-->
-    <!--<#% @beers.each do |beer| %>-->
-    <!--<li><#%= "#{beer.name} - ABV: #{beer.abv} - IBU:#{beer.ibu}%" %></li>-->
-    <!--<#% end %>-->
-  <!--</ul>-->
+<div class="large-12 large-centered columns">
+  <br>
+  <h4>Hi <%= current_user.name %>. You have <%= current_user.beers.count %> beers in your list.</h4>
+  <br>
 </div>
-
+<div class="large-10 large-centered columns">
+  <ul>
+    <% current_user.beers.each do |beer| %>
+    <h5><li><%= link_to beer.name, edit_beer_path(beer.id) %><%= " - ABV: #{beer.abv}% - IBU: #{beer.ibu} - Rating: #{beer.rating}"%></li>
+    </h5>
+    <% end %>
+  </ul>
+</div>

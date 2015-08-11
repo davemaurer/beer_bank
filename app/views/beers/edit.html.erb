@@ -1,0 +1,31 @@
+<nav class="top-bar" data-topbar>
+  <section class="top-bar-section">
+    <ul class="buttons">
+      <li class="divider"></li>
+      <li><%= link_to "Back to BeerBank", beers_path, class: "button" %></li>
+    </ul>
+  </section>
+</nav>
+<div class="beers_background">
+  <div class="large-12 columns">
+    <br>
+    <h2>EDIT THIS BEER</h2>
+    <h3><%= "#{@beer["name"]} - ABV: #{@beer["abv"]}% - IBU: #{@beer["ibu"]}" %></h3>
+  </div>
+<br>
+  <div class="large-6 large-centered columns">
+    <%= form_for(@beer, url: beer_path, method: "patch") do |f| %>
+      <%= f.label "name" %>
+      <%= f.text_field :name, value: @beer['name'] %>
+      <%= f.label "rating" %>
+      <%= f.text_field :rating, value: @beer['rating'], class: "smallbox" %>
+      <%= f.label "ABV" %>
+      <%= f.text_field :abv, value: @beer['abv'], class: "smallbox" %>
+      <%= f.label "IBU" %>
+      <%= f.text_field :ibu, value: @beer['ibu'], class: "smallbox" %>
+      <%= f.label "description" %>
+      <%= f.text_area :description, value: @beer['description'] %>
+      <%= f.submit "Add Changes", class: "button" %>
+    <% end %>
+  </div>
+</div>
