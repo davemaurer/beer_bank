@@ -1,6 +1,4 @@
 class User < ActiveRecord::Base
-  has_many :ratings
-  has_many :beers, through: :ratings
   has_and_belongs_to_many :beers
 
   def self.from_omniauth(auth_info)
