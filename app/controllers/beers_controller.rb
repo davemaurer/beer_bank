@@ -7,9 +7,11 @@ class BeersController < ApplicationController
     if data["data"].nil?
       flash[:notice] = "Beer name invalid. Please try again and Capitalize."
       redirect_to beers_path
-    elsif current_user.beers.find_by(name: valid_params[:name]).name != nil && current_user.beers.find_by(name: valid_params[:name]).name == (data["data"].first["name"])
-      list_beer = current_user.beers.find_by(name: valid_params[:name])
-      redirect_to beer_path(list_beer.id)
+    elsif current_user.beers.find_by(name: valid_params[:name]) != nil
+      if current_user.beers.find_by(name: valid_params[:name]).name == (data["data"].first["name"])
+        flash[:notice] = "Beer is on your list. Please use it's link for editing."
+        redirect_to beers_path
+      end
     else
       @beer = data["data"].first
     end
@@ -19,17 +21,17 @@ class BeersController < ApplicationController
   end
 
   def create
-    new_beer = current_user.beers.find_or_create_by(valid_params)
-    flash[:notice] = "You have #{new_beer.name} a beer to your list!"
+    current_user.beers.find_or_create_by(valid_params)
+    flash[:notice] = "You have added a beer to your list!"
     redirect_to beers_path
   end
 
   def edit
-    @beer = current_user.beers.find(params[:id])
+    @beer = Beer.find(params[:id])
   end
 
   def update
-    @beer = current_user.beers.find(params[:id])
+    @beer = Beer.find(params[:id])
     if @beer.update(valid_params)
       flash[:notice] = "Beer Update Successful"
       redirect_to beers_path

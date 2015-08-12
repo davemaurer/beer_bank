@@ -7,6 +7,7 @@
       <li>
       <%= form_for(:beer, url: beers_path) do |f| %>
       <%= f.hidden_field :name, value: @beer['name'] %>
+      <%= f.hidden_field :rating, value: "Unrated" %>
       <%= f.hidden_field :abv, value: @beer['abv'] %>
       <%= f.hidden_field :ibu, value: @beer['ibu'] %>
       <%= f.hidden_field :description, value: @beer['description'] %>

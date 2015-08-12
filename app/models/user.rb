@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :ratings
+  has_many :beers, through: :ratings
   has_and_belongs_to_many :beers
 
   def self.from_omniauth(auth_info)
@@ -9,7 +11,6 @@ class User < ActiveRecord::Base
       oauth_token: auth_info.credentials.token,
       oauth_token_secret: auth_info.credentials.secret
       )
-
     user
   end
 

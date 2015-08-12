@@ -11,12 +11,11 @@
     <br>
     <h2>EDIT THIS BEER</h2>
     <h3><%= "#{@beer["name"]} - ABV: #{@beer["abv"]}% - IBU: #{@beer["ibu"]}" %></h3>
+    <h5><%= @beer.description %></h5>
   </div>
 <br>
   <div class="large-6 large-centered columns">
-    <%= form_for(@beer, url: beer_path, method: "patch") do |f| %>
-      <%= f.label "name" %>
-      <%= f.text_field :name, value: @beer['name'] %>
+    <%= form_for(@beer, url: beer_path, method: "put") do |f| %>
       <%= f.label "rating" %>
       <%= f.text_field :rating, value: @beer['rating'], class: "smallbox" %>
       <%= f.label "ABV" %>
