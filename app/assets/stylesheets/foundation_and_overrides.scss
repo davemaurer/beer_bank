@@ -1487,3 +1487,28 @@ $include-html-global-classes: $include-html-classes;
 
 @import 'foundation';
 
+.top-bar .button, .top-bar button {
+  font-size: 0.75rem;
+  margin-bottom: 0;
+  padding-bottom: 0.4125rem;
+  padding-top: 0.2rem;
+  color: white;
+  //outline: none;
+}
+
+.title-text {
+  color: darkslategray;
+}
+
+a {
+  color: darkslategray;
+}
+
+a:hover {
+  color: firebrick;
+}
+
+.list-page {
+  height: 100%;
+  min-height: 100%;
+}

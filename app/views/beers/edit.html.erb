@@ -2,13 +2,12 @@
   <section class="top-bar-section">
     <ul class="buttons">
       <li class="divider"></li>
-      <li><%= link_to "Back to BeerBank", beers_path, class: "button" %></li>
+      <li><%= button_to "Back to BeerBank", beers_path, class: "button", method: "get" %></li>
     </ul>
   </section>
 </nav>
 <div class="beers_background">
   <div class="large-12 columns">
-    <br>
     <h2>EDIT THIS BEER</h2>
     <h3><%= "#{@beer["name"]} - ABV: #{@beer["abv"]}% - IBU: #{@beer["ibu"]}" %></h3>
     <h5><%= @beer.description %></h5>
@@ -16,15 +15,15 @@
 <br>
   <div class="large-6 large-centered columns">
     <%= form_for(@beer, url: beer_path, method: "put") do |f| %>
-      <%= f.label "rating" %>
-      <%= f.text_field :rating, value: @beer['rating'], class: "smallbox" %>
-      <%= f.label "ABV" %>
-      <%= f.text_field :abv, value: @beer['abv'], class: "smallbox" %>
-      <%= f.label "IBU" %>
-      <%= f.text_field :ibu, value: @beer['ibu'], class: "smallbox" %>
-      <%= f.label "description" %>
-      <%= f.text_area :description, value: @beer['description'] %>
-      <%= f.submit "Add Changes", class: "button" %>
+      <%= f.label "rating", class: "edit-label" %>
+      <%= f.text_field :rating, value: @beer["rating"], class: "smallbox" %>
+      <%= f.label "ABV", class: "edit-label" %>
+      <%= f.text_field :abv, value: @beer["abv"], class: "smallbox" %>
+      <%= f.label "IBU", class: "edit-label" %>
+      <%= f.text_field :ibu, value: @beer["ibu"], class: "smallbox" %>
+      <%= f.label "description", class: "edit-label" %>
+      <%= f.text_area :description, value: @beer["description"] %>
+      <%= f.submit "Save Changes", class: "button" %>
     <% end %>
   </div>
 </div>

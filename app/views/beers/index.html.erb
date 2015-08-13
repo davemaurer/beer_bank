@@ -16,30 +16,19 @@
       </div>
     </li>
   </ul>
-  <section class="top-bar-section">
-    <ul class="right">
-      <li class="has-dropdown">
-        <a href="#">Filter by Beer Type</a>
-        <ul class="dropdown">
-          <li><a href="#">link</a></li>
-          <li><a href="#">link</a></li>
-        </ul>
-      </li>
-    </ul>
-    <ul class="left">
-    </ul>
-  </section>
 </nav>
+<div class="list-page">
 <div class="large-12 large-centered columns">
   <br>
-  <h4>Hi <%= current_user.name %>. You have <%= current_user.beers.count %> beers in your list.</h4>
+  <h3 class="title-text">Hi <%= current_user.name %>. You have <%= current_user.beers.count %> beers in your list.</h3>
   <br>
 </div>
 <div class="large-10 large-centered columns">
-  <ul>
+  <ul class="no-bullet">
     <% current_user.beers.each do |beer| %>
-    <h5><li><%= link_to beer.name, edit_beer_path(beer.id) %><%= " - ABV: #{beer.abv}% - IBU: #{beer.ibu} - Rating: #{beer.rating}"%></li>
+    <h5><li><%= link_to beer.name, edit_beer_path(beer.id), class: "bubble" %><%= " ABV: #{beer.abv}% - IBU: #{beer.ibu} - Rating: #{beer.rating}"%></li>
     </h5>
     <% end %>
   </ul>
+</div>
 </div>
