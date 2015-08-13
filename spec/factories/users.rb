@@ -5,5 +5,4 @@ FactoryGirl.define do
     oauth_token "token"
     oauth_secret "secret"
   end
-
 end

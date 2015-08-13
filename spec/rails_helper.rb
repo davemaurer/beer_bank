@@ -71,4 +71,21 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+        provider: 'twitter',
+        extra: {
+          raw_info: {
+            user_id: "007",
+            name: "Dave",
+          }
+        },
+        credentials: {
+          token: "dogs",
+          secret: "goldens"
+        }
+      })
+  end
 end

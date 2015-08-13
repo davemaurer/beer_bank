@@ -20,15 +20,19 @@
 <div class="list-page">
 <div class="large-12 large-centered columns">
   <br>
+  <% cache(action: "index", action_suffix: "beers-count") do %>
   <h3 class="title-text">Hi <%= current_user.name %>. You have <%= current_user.beers.count %> beers in your list.</h3>
+  <% end %>
   <br>
 </div>
 <div class="large-10 large-centered columns">
   <ul class="no-bullet">
+  <% cache(action: "index", action_suffix: "beers-list") do %>
     <% current_user.beers.each do |beer| %>
     <h5><li><%= link_to beer.name, edit_beer_path(beer.id), class: "bubble" %><%= " ABV: #{beer.abv}% - IBU: #{beer.ibu} - Rating: #{beer.rating}"%></li>
     </h5>
     <% end %>
+  <% end %>
   </ul>
 </div>
 </div>
