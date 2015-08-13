@@ -1,9 +1,12 @@
 // larger screen styles
 .beers_background {
-  background: asset-data-url("beerBackground-5.jpg") no-repeat center center;
+  background: asset-data-url("beerBackground-5.jpg") repeat center center;
+  height: 100%;
   background-size: cover;
-  height: 95vh;
-  overflow: hidden;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  overflow-y:scroll;
   .button {
     color: white;
   }

@@ -13,8 +13,6 @@ gem 'foundation-rails'
 gem 'omniauth-twitter'
 gem 'skylight'
 
-# gem 'bcrypt', '~> 3.1.7'
-
 # gem 'unicorn'
 
 group :development, :test do
@@ -32,6 +30,7 @@ end
 
 group :test do
   gem 'shoulda-matchers'
+  gem 'simplecov'
 end
 
 group :deployment do

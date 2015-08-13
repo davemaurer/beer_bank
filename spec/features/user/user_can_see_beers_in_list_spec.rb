@@ -7,7 +7,7 @@ RSpec.feature "user" do
     stub_omniauth
   }
 
-  it "sees beers" do
+  xit "sees beers" do
     Beer.create(name: "beer3", rating: 1, ibu: 10, abv: 5, description: "beer1desc")
     Beer.create(name: "beer4", rating: 2, ibu: 20, abv: 6, description: "beer2desc")
     visit "/beers"

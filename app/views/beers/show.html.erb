@@ -18,16 +18,17 @@
     </ul>
   </section>
 </nav>
-
-<div class="large-12 columns">
+<div class="beers_background">
+  <div class="large-12 columns">
+    <br>
+    <h3><%= "#{@beer["name"]} - ABV: #{@beer["abv"]}% - IBU: #{@beer["ibu"]}" %></h3>
+  </div>
   <br>
-  <h3><%= "#{@beer["name"]} - ABV: #{@beer["abv"]}% - IBU: #{@beer["ibu"]}" %></h3>
-</div>
-<br>
-<br>
-<br>
-<div>
-  <div class="large-9 large-centered columns">
-    <h3><%= "#{@beer["description"]}" %></h3>
+  <br>
+  <br>
+  <div>
+    <div class="large-9 large-centered columns">
+      <h3><%= "#{@beer["description"]}" %></h3>
+    </div>
   </div>
 </div>

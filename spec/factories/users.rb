@@ -3,6 +3,6 @@ FactoryGirl.define do
     name "john"
     uid "5000"
     oauth_token "token"
-    oauth_secret "secret"
+    oauth_token_secret "secret"
   end
 end
