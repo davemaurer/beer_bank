@@ -20,14 +20,14 @@
 <div class="beers_background">
 <div class="large-12 large-centered columns">
   <br>
-  <h3 class="title-text">Hi <%= current_user.name %>. You have <%= current_user.beers.count %> beers in your list.</h3>
+  <h1 class="title-text">Hi <%= current_user.name %>. You have <%= current_user.beers.count %> beers in your list.</h1>
   <br>
 </div>
 <div class="large-10 large-centered columns">
   <ul class="no-bullet">
     <% current_user.beers.each do |beer| %>
-    <h5><li><%= link_to beer.name, edit_beer_path(beer.id), class: "bubble" %><%= " ABV: #{beer.abv}% - IBU: #{beer.ibu} - Rating: #{beer.rating}"%></li>
-    </h5>
+    <h3><li><%= link_to beer.name, edit_beer_path(beer.id), class: "bubble" %><%= " ABV: #{beer.abv}% - IBU: #{beer.ibu} - Rating: #{beer.rating}"%></li>
+    </h3>
     <% end %>
   </ul>
 </div>
